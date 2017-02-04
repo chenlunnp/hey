@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<form action="#" id="form1">
+			
+			<input type="button" value="Button"/><br />
+			<input type="checkbox" name="c"/>1
+			<input type="checkbox" name="c"/>2
+			<input type="checkbox" name="c"/> 3 <br />
+			<input type="file"/> <br />
+			<input type="hidden" /><div style="display: none;">test</div><br />
+			<input type="image" /><br />
+			<input type="password" /><br />
+			<input type="radio" name="a"/>1<input type="radio" name="a"/>2<br />
+			<input type="reset" /><br />
+			<input type="submit" value="提交"/><br />
+			<input type="text" /><br />
+			<div id="qq"></div>
+			<select >
+				<option >Option</option>
+			</select><br />
+			<textarea ></textarea><br />
+			<button>Button</button><br />
+		</form>
+		<script type="text/javascript">
+			var ss=$("#form1 :input").length;
+			$("#qq").text(ss);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.level2{
+				display: none;
+			}
+			.demo{
+				color: red;
+				font-size: 30px;
+				font-weight: bold;
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<div class="box">
+			<ul class="menu">
+				<li class="level1">
+					<a href="#none">衬衫</a>
+					<ul class="level2">
+						<li><a href="#none">短袖</a></li>
+						<li><a href="#none">短袖</a></li>
+						<li><a href="#none">短袖</a></li>
+						<li><a href="#none">短袖</a></li>
+					</ul>
+				</li>
+				<li class="level1">
+					<a href="#none">卫衣</a>
+					<ul class="level2">
+						<li><a href="#none">卫衣</a></li>
+						<li><a href="#none">短袖</a></li>
+						<li><a href="#none">短袖</a></li>
+						<li><a href="#none">短袖</a></li>
+					</ul>
+				</li>
+				<li class="level1">
+					<a href="#none">裤子</a>
+					<ul class="level2">
+						<li><a href="#none">裤子</a></li>
+						<li><a href="#none">短袖</a></li>
+						<li><a href="#none">短袖</a></li>
+						<li><a href="#none">短袖</a></li>
+					</ul>
+				</li>
+			</ul>
+			
+		</div>
+		<p class="demo">Demo</p>
+		<input type="checkbox" id="cr" /><lable for="cr">我已经阅读了上面的制度。</label>
+		<script type="text/javascript">
+			$(".level1>a").click(function(){
+				$(this).addClass("current")
+				.next().show()
+				.parent().siblings(). children("a").removeClass("current")
+				.next().hide();
+				return false;
+			})
+			$(document).ready(function(){
+				var $cr =$("#cr");
+				
+				$cr.click(function(){
+					if($cr.is(":checked")){
+						alert("感谢你的支持");
+					}
+				})
+			})
+			$(".demo").click(function(){
+				alert("jqury demo!");
+			})
+			$("#tt").css("color","red");
+			//无需判断#tt是否存在，即使没有，也不会报错
+			if($(".demo").length>0){
+				
+			}
+		</script>
+	</body>
+</html>

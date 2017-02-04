@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<style type="text/css">
+			div,span, p{
+				width: 140px;
+				height: 140px;
+				margin: 5px;
+				background: #aaa;
+				border: #000 1px solid;
+				float: left;
+				font-size: 17px;
+				font-family: verdana;
+			}
+			div.mini{
+				width: 55px;
+				height: 55px;
+				background-color: #aaa;
+				font-size: 12px;
+			}
+			
+			div.hide{
+				display: none;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<div class="one" id="one">
+			id为one，class为one的div
+			<div class="mini">class为mini</div>
+		</div>
+		<div class="one" id="two" title="test">
+			id为two，class为one，title为test的div。
+			<div class="mini" title="other">
+				class为mini，title为other
+			</div>
+			<div class="mini" title="test">
+				class为mini，title为test
+			</div>
+		</div>
+		<div class="one">
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini"></div>
+		</div>
+		<div class="one">
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini">class为mini</div>
+			<div class="mini" title="tesst">class为mini，title为tesst</div>
+		</div>
+		<div style="display: none; " class="none">
+			style为display为"none"的div
+		</div>
+		<div class="hide">
+			class为“hide”的div
+		</div>
+		<div>
+			包含input的type为“hidden”的div<input type="hidden" size="8" />
+		</div>
+		<span id="mover">
+			正在执行动画的span元素
+		</span>
+		<script type="text/javascript">
+			$("#one").css("background","red");
+			$(".mini").css("background","blue");
+			$("div").css("background","#00C3F5");
+			$("*").css("background","#E02B41");
+			$("spam,#two").css("background","#FF6709");
+			$("body div").css("background","yellow");
+			$("body >div").css("background","yellowgreen");
+			$(".one").next("div").css("background","#000000");
+			$(".one").nextAll("div").css("background","#000000")
+			//siblings()与前后位置无关
+			$("div:not(.one)").css("background","slateblue");
+			$("div:hidden").show(10000);
+		</script>
+	</body>
+</html>
