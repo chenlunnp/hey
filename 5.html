@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.high{
+				font-weight: bold;
+				color: red;
+			}
+			.another{
+				font-style: italic;
+				color: blue;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<input type="button" value="输出class类"/>
+		<input type="button" value="设置class类"/>
+		<input type="button" value="追加class类"/>
+		<input type="button" value="删除全部class类"/>
+		<input type="button" value="删除指定class类"/>
+		<input type="button" value="重复切换class类"/>
+		<input type="button" value="判断元素是否含有某个class类"/>
+
+		<p title="选择你最喜欢的水果">你最喜欢的水果是？</p>
+		<ul>
+			<li title="苹果">苹果</li>
+			<li title="橘子">橘子</li>
+			<li title="菠萝">菠萝</li>
+		</ul>
+		
+		
+		<script type="text/javascript">
+//			var $li=$("ul li:eq(2)");
+//			var li_txt =$li.text();
+//			alert(li_txt);
+//			//获得属性值
+//			var $pare =$("p");
+//			var p_txt =$pare.attr("title");
+//			alert(p_txt);
+
+			var $li_1 =$("<li title='香蕉'>香蕉</li>");
+			var $li_2 =$("<li title='雪梨'>雪梨</li>");
+			$("ul").append($li_1).append($li_2);
+			$("ul li:eq(1)").appendTo("ul");
+//			$("ul li ").remove("li[title!=菠萝]");
+			//title不是菠萝的全删除
+//			$("ul li").click(function(){
+//				alert($(this).html());
+//			})
+//			var $li =$("ul li:eq(1)").detach();
+//			$li.appendTo("ul");
+			$("ul li").click(function(){
+				$(this).clone().appendTo("ul");
+				$(this).clone(true).appendTo("body");
+			})
+//			$("p").replaceWith('<strong>你最不喜欢的水果</strong>');
+//			$('<strong>你最不喜欢的水果okok</strong>').replaceAll("p");
+			$("p").removeAttr('title');
+//			$('p').addClass("another");
+			$('p').text("sdasdd");
+			$(function(){
+      //获取样式
+      $("input:eq(0)").click(function(){
+			alert( $("p").attr("class") );
+	  });
+      //设置样式
+	  $("input:eq(1)").click(function(){
+			$("p").attr("class","high");
+	  });
+      //追加样式
+	  $("input:eq(2)").click(function(){
+			$("p").addClass("another");
+	  });    
+	  //删除全部样式
+	  $("input:eq(3)").click(function(){
+			$("p").removeClass();
+	  });  
+	   //删除指定样式
+	  $("input:eq(4)").click(function(){
+			$("p").removeClass("high");
+	  });   
+	  //重复切换样式
+	  $("input:eq(5)").click(function(){
+			$("p").toggleClass("another");
+	  });  
+	  //判断元素是否含有某样式
+	  $("input:eq(6)").click(function(){
+			alert( $("p").hasClass("another") )
+			alert( $("p").is(".another") )
+	  });  
+  });
+
+		</script>
+	</body>
+</html>
