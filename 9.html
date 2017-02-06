@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.content{                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+				display: none;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<div id="pan">
+			<h5 class="head">什么是jq</h5>
+			<div class="content">
+				jq是一个优秀的javascri库第三方士大夫士大夫的防晒霜发放sffafasfadsdsdasdasd当然发顺丰大沙发沙发实打实大所大所多士大夫撒发大水sdfsadf
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$("#pan h5.head").bind("click",function(){
+				var sds=$(this).next();
+				if (sds.is(":visible")) {
+					sds.hide();
+
+				} else{
+					sds.show();
+				}
+			})
+		</script>
+	</body>
+</html>
