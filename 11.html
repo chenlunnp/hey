@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form action="test.html">
+			用户名：<input type="text" id="username" />
+			<br/>
+			<input type="submit" value="提交" id="sub"/>
+		</form>
+		
+		<div id="msg"></div>
+		
+		<script type="text/javascript">
+			$(function(){
+				$("#sub").bind("click",function(event){
+					var user=$("#username").val();
+					if(user==""){
+						$("#msg").html("<p>文本框的值不能为空.</p>"); 
+		     			event.preventDefault();  
+//		     			return false; 
+
+					}
+				})
+			})
+			
+		</script>
+	</body>
+</html>

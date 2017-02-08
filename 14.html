@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.1.1.js">
+			
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(function(){
+			   $('#btn').bind("click", function(){
+							 $('#test').append("<p>我的绑定函数1</p>");
+					  }).bind("click", function(){
+							 $('#test').append("<p>我的绑定函数2</p>");
+					  }).bind("click", function(){
+						  	 $('#test').append("<p>我的绑定函数3</p>");
+				      });
+			   $('#btn').trigger("click");
+			   //$("#btn").click();
+			})
+		</script>
+	
+		
+		<button id="btn">点击我</button>
+		<div id="test"></div>
+
+	</body>
+</html>
