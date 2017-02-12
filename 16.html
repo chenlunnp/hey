@@ -10,7 +10,8 @@
 			#panel {
 				position: relative; 
 				width: 100px; height:100px;
-				border: 1px solid #0050D0;background: #96E555;				 
+				border: 1px solid #0050D0;
+				background: #96E555;				 
 				cursor: pointer}
 
 		</style>
@@ -21,7 +22,7 @@
 
 		<script type="text/javascript">
 		    $(function(){
-		        $("#panel").css("opacity", "0.5");//���ò�͸����
+		        $("#panel").css("opacity", "0.5");
 		        $("#panel").click(function(){
 		              $(this).animate({left: "400px", height:"200px" ,opacity: "1"}, 3000)
 							 .animate({top: "200px" , width :"200px"}, 3000 )

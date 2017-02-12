@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.high{
+				color: red;
+			}
+		</style>
+		<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form method="post" action="">
+			<div class="int">
+				<label for="username">用户名:</label>
+				<input type="text" id="username" class="required" />
+			</div>
+			<div class="int">
+				<label for="email">邮箱:</label>
+				<input type="text" id="email" class="required" />
+			</div>
+			<div class="int">
+				<label for="personinfo">个人资料:</label>
+				<input type="text" id="personinfo" />
+			</div>
+			<div class="sub">
+				<input type="submit" value="提交" id="send"/><input type="reset" id="res"/>
+			</div>
+		</form>
+
+		
+		
+		<script type="text/javascript">
+		$(function(){})
+			$("form :input.required").each(function(){
+				var $required = $("<strong class='high'> *</strong>"); 
+				$(this).parent().append($required); 
+			});
+			
+			
+			$('form :input').blur(function(){  // 为表单元素添加失去焦点事件
+				 var $parent = $(this).parent();
+				 //验证用户名
+				 if( $(this).is('#username') ){
+						if( this.value=="" || this.value.length	< 6	){
+							var errorMsg = '请输入至少6位的用户名.';
+							$parent.append('<span class="formtips onError">'+errorMsg+'</span>');
+						}else{
+							var okMsg =	'输入正确.';
+							$parent.append('<span class="formtips onSuccess">'+okMsg+'</span>');
+						}
+				 }
+				 //验证邮件
+				 if( $(this).is('#email') ){
+					if( this.value=="" || ( this.value!="" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value) ) ){
+						  var errorMsg = '请输入正确的E-Mail地址.';
+						  $parent.append('<span class="formtips onError">'+errorMsg+'</span>');
+					}else{
+						  var okMsg = '输入正确.';
+						  $parent.append('<span class="formtips onSuccess">'+okMsg+'</span>');
+					}
+				 }
+			});
+
+		});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.focus{
+				border: 1px solid #f00;
+				background: #fcc;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.1.1.js">
+			
+		</script>
+	</head>
+	<body>
+		<form action="#" method="post" id="re">
+			<fieldset id="">
+				<legend>个人基本信息</legend>
+				<div>
+					<label for="username">名称:</label>
+					<input type="text"  id="username"" />
+				</div>
+				<div>
+					<label for="pass">密码:</label>
+					<input type="password" name="pass" id="pass" value="" />
+				</div>
+				<div>
+					<label for="username">详细信息:</label>
+					<textarea id="msg"></textarea>
+				</div>			
+			</fieldset>			
+			
+		</form>
+		
+		<script type="text/javascript">
+			$(function(){
+				$(":input").focus(function(){
+					$(this).addClass("focus");
+				}).blur(function(){
+					$(this).removeClass("focus");
+				});
+			});
+		</script>
+		
+	</body>
+</html>
