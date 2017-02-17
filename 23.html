@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.even{
+				background: #fff38f;
+			}
+			.odd{
+				background: #ffffee;
+			}
+			.selected{
+				background: red;
+			}
+		</style>
+		<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr><th>姓名</th><th>性别</th><th>暂住地</th></tr>
+			</thead>
+			<tbody>
+				<tr class="parent" id="row_01"><td colspan="3">前台设计组</td></tr>
+				<tr class="child_row_01"><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+				<tr class="child_row_01"><td>李四</td><td>女</td><td>浙江杭州</td></tr>
+	
+				<tr class="parent" id="row_02"><td colspan="3">前台开发组</td></tr>
+				<tr class="child_row_02"><td>王五</td><td>男</td><td>湖南长沙</td></tr>
+				<tr class="child_row_02"><td>找六</td><td>男</td><td>浙江温州</td></tr>
+	
+				<tr class="parent" id="row_03"><td colspan="3">后台开发组</td></tr>
+				<tr class="child_row_03"><td>Rain</td><td>男</td><td>浙江杭州</td></tr>
+				<tr class="child_row_03"><td>MAXMAN</td><td>女</td><td>浙江杭州</td></tr>
+
+			</tbody>
+		</table>
+		
+		<script type="text/javascript">
+		 $(function(){
+				$("tbody>tr:odd").addClass("odd");
+				$("tbody>tr:even").addClass("even");
+				$('tbody>tr').click(function() {
+					
+					var hasSelected=$(this).hasClass('selected');
+					
+					$(this)[hasSelected?"removeClass":"addClass"]('selected')
+						
+						.find(':checkbox').attr('checked',!hasSelected);
+				});
+				
+				$('tbody>tr:has(:checked)').addClass('selected');
+		  })
+		 $('tr.parent').click(function(){   
+				$(this)
+					.toggleClass("selected")   
+					.siblings('.child_'+this.id).toggle(); 
+		}).click();
+
+
+		       
+		</script>
+
+	</body>
+</html>
