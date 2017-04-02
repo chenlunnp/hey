@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#testajax").click(function(){
+					htmlobj=$.ajax({
+						
+						url:"readme.txt",
+						async:true
+					});
+					$("mydiv").html(htmlobj.responseText);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="mydiv"><h2>通过ajax改变文本</h2></div>
+		<button id="testajax" type="button">ajax改变内容</button>
+	</body>
+</html>
+
+
